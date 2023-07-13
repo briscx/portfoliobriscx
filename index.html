@@ -67,6 +67,18 @@
             height: 225px;
             margin-bottom: 10px;
         }
+      .sidebar-frame {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 200px;
+        height: 100%;
+      }
+      @media (max-width: 768px) {
+        .sidebar-frame {
+          display: none;
+        }
+      }
     </style>
 </head>
     <body>
@@ -89,227 +101,220 @@
                 </ul>
             </div>
         </nav>
-        <div class="container">
-            <h1>Cyber Security - Brischetto Salvatore Andrea</h1>
-            <img src="PictureGithubProfile.jpeg" alt="Profile Picture">
-            <p>Benvenuti sulla pagina personale di Brischetto Salvatore Andrea. Di seguito sono riportati alcuni principi generali della cyber security:</p>
-            
-            <ol id="principles">
-                <li><strong>Confidenzialità:</strong> Assicurarsi che le informazioni siano accessibili solo a persone autorizzate. Utilizzare tecniche come la crittografia per proteggere i dati sensibili.</li>
-            
-                <li><strong>Integrità:</strong> Garantire che le informazioni non siano alterate in modo non autorizzato o accidentale. Utilizzare firme digitali e controlli di integrità per rilevare modifiche non autorizzate ai dati.</li>
-            
-                <li><strong>Disponibilità:</strong> Assicurarsi che le risorse informatiche siano sempre accessibili agli utenti autorizzati. Implementare misure per prevenire interruzioni, guasti o attacchi che potrebbero rendere inaccessibili i sistemi.</li>
-            
-                <li><strong>Autenticazione:</strong> Verificare l'identità degli utenti e delle entità che accedono ai sistemi. Utilizzare password robuste, autenticazione a due fattori e altre tecniche per garantire che solo persone autorizzate possano accedere ai dati e ai servizi.</li>
-            
-                <li><strong>Autorizzazione:</strong> Definire i livelli di accesso appropriati per gli utenti e le entità in base alle loro responsabilità e privilegi. Limitare l'accesso solo alle risorse necessarie per svolgere il proprio lavoro.</li>
-            
-                <li><strong>Responsabilità:</strong> Ogni utente deve essere responsabile delle proprie azioni digitali. Mantenere le password segrete, evitare di condividere informazioni sensibili e utilizzare software legalmente acquisito.</li>
-            </ol>
-            <p>La cyber security è di fondamentale importanza per proteggere le informazioni personali, aziendali e sensibili da minacce informatiche sempre più sofisticate. Utilizzando i principi sopra citati e adottando buone pratiche di sicurezza informatica, possiamo contribuire a creare un ambiente online più sicuro per tutti.</p>
-        
-            <p>Per ulteriori informazioni sulla cyber security e sulle migliori pratiche, si consiglia di consultare siti web e risorse affidabili come organizzazioni specializzate, enti governativi e community di esperti di sicurezza informatica.</p>
-        
-            <p>Grazie per la lettura!</p>
-            <p>Di seguito sono riportati alcuni principali programmi e progetti che ho realizzato:</p>
-            <ul id="projects">
-                <li><a href="https://github.com/briscx/corsocyber/blob/main/appflask.py" target="_blank">AppFlask</a></li>
-                <p>Questo codice Flask definisce un'applicazione web con una sola pagina.<br>Quando si accede alla radice dell'applicazione, viene visualizzato il template 'index.html'.</br>Se viene inviato un modulo tramite una richiesta POST, viene estratto il valore del campo username e viene restituito il template 'welcome.html' con il nome utente inserito.<br>Si consiglia di creare i file HTML 'index.html' e 'welcome.html' nella stessa directory del file Python per fornire il contenuto desiderato per le pagine.</br></p>
-                <li><a href="https://github.com/briscx/corsocyber/blob/main/cookie.py" target="_blank">Cookie</a></li>
-                <p>Questo codice Flask definisce un'applicazione web con funzionalità di login/logout utilizzando le sessioni.<br>Quando si accede alla radice dell'applicazione, viene controllato se l'utente è già autenticato e viene visualizzato un messaggio di benvenuto personalizzato se lo è.</br>Altrimenti, viene visualizzato un modulo di login.<br>Quando viene effettuato il login, l'username viene salvato nella sessione insieme all'ultimo accesso.<br>È possibile effettuare il logout per rimuovere l'username e l'ultimo accesso dalla sessione.<br>Si consiglia di creare il file HTML 'login.html' nella stessa directory del file Python per fornire il modulo di login personalizzato.<br>Assicurati di mantenere la chiave segreta (app.secret_key) protetta e di non divulgarla pubblicamente, poiché è utilizzata per firmare la sessione e proteggere le informazioni.</br></p>
-                <li><a href="https://github.com/briscx/corsocyber/blob/main/service-scan.py" target="_blank">ServiceScan</a></li>
-                <p>Questo codice è uno script Python per la scansione dei servizi su un determinato indirizzo IP.<br>Si consiglia di personalizzare l'indirizzo IP del target (target_ip),in questo esempio io ho usato l'IP di Google,</br>la porta di partenza (start_port),<br>la porta di fine (end_port)</br>in base alle tue esigenze di scansione dei servizi.</p>
-                <li><a href="https://github.com/briscx/corsocyber/blob/main/testapp.py" target="_blank">TestApp</a></li>
-                <p>In sintesi, questo codice Flask definisce un'applicazione web che mostra un form di accesso.<br>Quando si invia il form con l'username e la password, vengono visualizzati i valori ricevuti.</br>Altrimenti, viene visualizzato il form per l'inserimento dei dati di accesso.<br>Si consiglia di personalizzare ulteriormente l'applicazione aggiungendo la logica di autenticazione o l'invio dei dati di accesso a un backend per la verifica delle credenziali."</p>
-                <li><a href="https://github.com/briscx/corsocyber/blob/main/aut2ways.py" target="_blank">Aut2Ways</a></li>
-                <p>Questo è il codice di un'applicazione Flask per un sistema di accesso OTP (One-Time Password).<br>In sintesi, questo codice definisce un'applicazione web che implementa un sistema di accesso OTP.</br>Gli utenti possono inserire un username e una password nel form di accesso.<br>Se le credenziali corrispondono a un valore fisso, viene generata una OTP casuale, viene inviata all'indirizzo email specificato</p>
-                <li><a href="https://github.com/briscx/corsocyber/blob/main/passwordsec.py" target="_blank">PasswordSec</a></li>
-                <p>Questo è il codice di un'applicazione Flask che verifica se una password fornita soddisfa determinati criteri di sicurezza.<br>In sintesi, questo codice Flask definisce un'applicazione web che verifica se una password fornita soddisfa i criteri di sicurezza.</br>Gli utenti possono inserire una password nel form e la funzione is_secure_password() verifica se la password è sicura o meno.</br>Il risultato viene restituito all'utente come messaggio sulla pagina web.</p>
-                <li><a href="https://github.com/briscx/corsocyber/blob/main/secure4key.py" target="_blank">Secure4Key</a></li>
-                <p>Questo è il codice di un'applicazione Flask che esegue diverse operazioni di crittografia e hash.<br>In sintesi, questo codice Flask definisce un'applicazione web che esegue operazioni di hashing (MD5, SHA-1, SHA-256) e crittografia (AES, RSA) su un testo fornito dall'utente.</br>L'utente può selezionare l'algoritmo desiderato e visualizzare i risultati sulla pagina web.</p>
-                <li><a href="https://github.com/briscx/corsocyber/blob/main/testmail.py" target="_blank">TestMail</a></li>
-                <p>Questo è il codice di un'applicazione Flask che consente di inviare email utilizzando il protocollo SMTP attraverso un account Gmail.<br>In sintesi, questo codice Flask definisce un'applicazione web che consente di inviare email tramite il server SMTP di Gmail.</br>Gli utenti possono compilare un form con i dettagli dell'email (mittente, destinatario, soggetto e messaggio) e inviarlo.<br>L'applicazione si connetterà al server SMTP di Gmail utilizzando l'account mittente specificato, invierà l'email con i dettagli forniti e restituirà un messaggio di conferma.</p>
-                <li><a href="https://github.com/briscx/corsocyber/blob/main/blockchain.py" target="_blank">Blockchain</a></li>
-                <p>Questo codice implementa una semplice blockchain utilizzando la crittografia hash SHA-256 con due blocchi e verifica l'integrità della catena.<b>È importante notare che questa implementazione è solo a scopo didattico e non contiene tutte le funzionalità e le sicurezze di una blockchain completa.</b>è possibile implementare il codice all'interno dell'applicazione Flask che invia email tramite SMTP(link sopra).<br>In particolare, puoi aggiungere la funzionalità della blockchain all'applicazione Flask che invia email.</br>Ad esempio, puoi creare un endpoint aggiuntivo per aggiungere blocchi alla blockchain ogni volta che viene inviata un'email.</p>
-                <li><a href="https://github.com/briscx/corsocyber/blob/main/scrap.py" target="_blank">Scrap</a></li>
-                <p>Questo codice utilizza la libreria Selenium per automatizzare l'interazione con un browser web.<br>In sintesi, il codice utilizza Selenium per aprire una pagina web, fare clic su un link di login e quindi chiudere il browser.</br>Puoi personalizzare ulteriormente il codice per adattarlo alle tue esigenze specifiche, come l'automazione di altre azioni sulla pagina web o l'utilizzo di un driver per un browser diverso da Chrome.</p>
-                <li><a href="https://github.com/briscx/corsocyber/blob/main/becrypto.py" target="_blank">BeCrypto</a></li>
-                <p>Questo codice rappresenta un'applicazione web con Flask che consente agli utenti di registrarsi e memorizza le informazioni nel database MySQL.<br>L'applicazione consente agli utenti di registrarsi inviando un modulo con un username e una password.</br>La password viene crittografata e quindi memorizzata nel database MySQL.<br>Inoltre, i dati della tabella "accessi" vengono stampati per verifica.</p>
-                <li><a href="https://github.com/briscx/corsocyber/blob/main/request.py" target="_blank">Request</a></li>
-                <p>Questo codice utilizza il modulo requests per effettuare una richiesta GET a una pagina web specificata tramite URL.<br>Utilizza anche il modulo BeautifulSoup per analizzare l'HTML della pagina e estrarre informazioni dai suoi elementi.</br>Si noti che il codice può essere personalizzato per eseguire diverse operazioni di scraping e analisi sui dati HTML delle pagine web.<br>Ricorda di sostituire l'URL nel codice con quello di tuo interesse</p>     
-            </ul>
-            <h2 id="programs">Programmi Utilizzati</h2>
-            <div class="grid-container">
-                <div class0"grid-item1">
-                    <a href="https://www.metasploit.com/">
-                        <img src="image/Metasploit.png" alt="Metasploit">
-                        <b>Metasploit</b>
-                    </a>
-                </div>
-                <div class0"grid-item1">
-                    <a href="https://nmap.org/">
-                        <img src="image/Nmap.png" alt="Nmap">
-                        <b>NMap</b>
-                    </a>
-                </div>
-                <div class0"grid-item1">
-                    <a href="https://www.offsec.com/metasploit-unleashed/armitage/">
-                        <img src="image/Armitage.png" alt="Armitage">
-                        <b>Armitage</b>
-                    </a>
-                </div>
-                <div class0"grid-item1">
-                    <a href="https://github.com/simsong/bulk_extractor">
-                        <img src="image/Bulk_Extractor.png" alt="Bulk_Extractor">
-                        <b>Bulk_Extractor</b>
-                    </a>
-                </div>
-                <div class0"grid-item1">
-                    <a href="https://github.com/g0tmi1k/exe2hex">
-                        <img src="image/Exe2hex.png" alt="Exe2hex">
-                        <b>exe2hex</b>
-                    </a>
-                </div>
-                <div class0"grid-item1">
-                    <a href="https://hashcat.net/hashcat/">
-                        <img src="image/Hashcat.png" alt="Hashcat">
-                        <b>Hashcat</b>
-                    </a>
-                </div>
-                <div class0"grid-item1">
-                    <a href="https://www.immuniweb.com/">
-                        <img src="image/ImmuniWeb.png" alt="Immuniweb">
-                        <b>ImmuniWeb</b>
-                    </a>
-                </div>
-                <div class0"grid-item1">
-                    <a href="https://github.com/t6x/reaver-wps-fork-t6x">
-                        <img src="image/Reaver.png" alt="Reaver">
-                        <b>Reaver</b>
-                    </a>
-                </div>
-                <div class0"grid-item1">
-                    <a href="https://wpscan.com/">
-                        <img src="image/Wpscan.png" alt="Wpscan">
-                        <b>Wpscan</b>
-                    </a>
-                </div>
-                <div class0"grid-item1">
-                    <a href="https://github.com/sullo/nikto">
-                        <img src="image/Nikto.png" alt="Nikto">
-                        <b>Nikto</b>
-                    </a>
-                </div>
-                <div class0"grid-item1">
-                    <a href="https://code.google.com/archive/p/skipfish/">
-                        <img src="image/SkipFish.png" alt="Skipfish">
-                        <b>Skipfish</b>
-                    </a>
-                </div>
-                <div class0"grid-item1">
-                    <a href="https://portswigger.net/burp/communitydownload">
-                        <img src="image/BurpeSuite.png" alt="Burpesuite">
-                        <b>Burpesuite</b>
-                    </a>
-                </div>
-                <div class0"grid-item1">
-                    <a href="https://dirb.sourceforge.net/">
-                        <img src="image/Dirb.png" alt="Dirb">
-                        <b>Dirb</b>
-                    </a>
-                </div>
-                <div class0"grid-item1">
-                    <a href="https://www.aircrack-ng.org/index.html">
-                        <img src="image/Aircrack-ng.png" alt="Aircrack-ng">
-                        <b>Aircrack-ng</b>
-                    </a>
-                </div>
-                <div class0"grid-item1">
-                    <a href="https://github.com/owasp-amass/amass">
-                        <img src="image/Amass.png" alt="Amass">
-                        <b>Amass</b>
-                    </a>
-                </div>
-                <div class0"grid-item1">
-                    <a href="https://www.autopsy.com/download/">
-                        <img src="image/Autopsy.png" alt="Autopsy">
-                        <b>Autopsy</b>
-                    </a>
-                </div>
-                <div class0"grid-item1">
-                    <a href="https://commixproject.com/">
-                        <img src="image/Commix.png" alt="Commix">
-                        <b>Commix</b>
-                    </a>
-                </div>
-                <div class0"grid-item1">
-                    <a href="https://github.com/vanhauser-thc/thc-hydra">
-                        <img src="image/Hydra.png" alt="Hydra">
-                        <b>Hydra</b>
-                    </a>
-                </div>
-                <div class0"grid-item1">
-                    <a href="https://github.com/openwall/john">
-                        <img src="image/John-The-Ripper.png" alt="John-The-Ripper">
-                        <b>John-the-Ripper</b>
-                    </a>
-                </div>
-                <div class0"grid-item1">
-                    <a href="https://www.maltego.com/">
-                        <img src="image/Maltego.png" alt="Maltego">
-                        <b>Maltego</b>
-                    </a>
-                </div>
-                <div class0"grid-item1">
-                    <a href="https://mitmproxy.org/">
-                        <img src="image/Mitmproxy.png" alt="Mitmproxy">
-                        <b>Mitmproxy</b>
-                    </a>
-                </div>
-                <div class0"grid-item1">
-                    <a href="http://netsniff-ng.org/">
-                        <img src="image/Netsniff-ng.png" alt="Netsniff-ng">
-                        <b>Netsniff.ng</b>ù
-                    </a>
-                </div>
-                <div class0"grid-item1">
-                    <a href="https://github.com/lanjelot/patator">
-                        <img src="image/Patator.png" alt="Patator">
-                        <b>Patator</b>
-                    </a>
-                </div>
-                <div class0"grid-item1">
-                    <a href="https://github.com/trustedsec/social-engineer-toolkit">
-                        <img src="image/SET.png" alt="Set-Engineering-Toolkit">
-                        <b>Social Engineering Toolkit(SET)</b>
-                    </a>
-                </div>
-                <div class0"grid-item1">
-                    <a href="https://www.spiderfoot.net/attack-surface-monitoring/">
-                        <img src="image/SpiderFoot.png" alt="Spiderfoot">
-                        <b>Spiderfoot</b>
-                    </a>
-                </div>
-                <div class0"grid-item1">
-                    <a href="https://sqlmap.org/">
-                        <img src="image/Sqlmap.png" alt="Sqlmap">
-                        <b>Sqlmap</b>
-                    </a>
-                </div>
-                <div class0"grid-item1">
-                    <a href="https://wapiti-scanner.github.io/">
-                        <img src="image/Wapiti.png" alt="Wapiti">
-                        <b>Wapiti</b>
-                    </a>
-                </div>
-                <div class0"grid-item1">
-                  <a href="https://www.wireshark.org/download.html">
-                      <img src="image/Wireshark_Icon.png" alt="Wireshark">
-                      <b>Wireshark</b>
-                  </a>
-                </div>
-            </div>
+      <iframe src="sidebar.html" frameborder="0" class="sidebar-frame"></iframe>
+      <div class="container">
+        <h1>Cyber Security - Brischetto Salvatore Andrea</h1>
+        <img src="PictureGithubProfile.jpeg" alt="Profile Picture">
+        <p>Benvenuti sulla pagina personale di Brischetto Salvatore Andrea. Di seguito sono riportati alcuni principi generali della cyber security:</p>
+        <ol id="principles">
+          <li><strong>Confidenzialità:</strong> Assicurarsi che le informazioni siano accessibili solo a persone autorizzate. Utilizzare tecniche come la crittografia per proteggere i dati sensibili.</li>
+          <li><strong>Integrità:</strong> Garantire che le informazioni non siano alterate in modo non autorizzato o accidentale. Utilizzare firme digitali e controlli di integrità per rilevare modifiche non autorizzate ai dati.</li>
+          <li><strong>Disponibilità:</strong> Assicurarsi che le risorse informatiche siano sempre accessibili agli utenti autorizzati. Implementare misure per prevenire interruzioni, guasti o attacchi che potrebbero rendere inaccessibili i sistemi.</li>
+          <li><strong>Autenticazione:</strong> Verificare l'identità degli utenti e delle entità che accedono ai sistemi. Utilizzare password robuste, autenticazione a due fattori e altre tecniche per garantire che solo persone autorizzate possano accedere ai dati e ai servizi.</li>
+          <li><strong>Autorizzazione:</strong> Definire i livelli di accesso appropriati per gli utenti e le entità in base alle loro responsabilità e privilegi. Limitare l'accesso solo alle risorse necessarie per svolgere il proprio lavoro.</li>
+          <li><strong>Responsabilità:</strong> Ogni utente deve essere responsabile delle proprie azioni digitali. Mantenere le password segrete, evitare di condividere informazioni sensibili e utilizzare software legalmente acquisito.</li>
+        </ol>
+        <p>La cyber security è di fondamentale importanza per proteggere le informazioni personali, aziendali e sensibili da minacce informatiche sempre più sofisticate. Utilizzando i principi sopra citati e adottando buone pratiche di sicurezza informatica, possiamo contribuire a creare un ambiente online più sicuro per tutti.</p>
+        <p>Per ulteriori informazioni sulla cyber security e sulle migliori pratiche, si consiglia di consultare siti web e risorse affidabili come organizzazioni specializzate, enti governativi e community di esperti di sicurezza informatica.</p>
+        <p><b>Grazie per la lettura!</b></p>
+        <p>Di seguito sono riportati alcuni principali programmi e progetti che ho realizzato:</p>
+        <ul id="projects">
+          <li><a href="https://github.com/briscx/corsocyber/blob/main/appflask.py" target="_blank">AppFlask</a></li>
+          <p>Questo codice Flask definisce un'applicazione web con una sola pagina.<br>Quando si accede alla radice dell'applicazione, viene visualizzato il template 'index.html'.</br>Se viene inviato un modulo tramite una richiesta POST, viene estratto il valore del campo username e viene restituito il template 'welcome.html' con il nome utente inserito.<br>Si consiglia di creare i file HTML 'index.html' e 'welcome.html' nella stessa directory del file Python per fornire il contenuto desiderato per le pagine.</br></p>
+          <li><a href="https://github.com/briscx/corsocyber/blob/main/cookie.py" target="_blank">Cookie</a></li>
+          <p>Questo codice Flask definisce un'applicazione web con funzionalità di login/logout utilizzando le sessioni.<br>Quando si accede alla radice dell'applicazione, viene controllato se l'utente è già autenticato e viene visualizzato un messaggio di benvenuto personalizzato se lo è.</br>Altrimenti, viene visualizzato un modulo di login.<br>Quando viene effettuato il login, l'username viene salvato nella sessione insieme all'ultimo accesso.<br>È possibile effettuare il logout per rimuovere l'username e l'ultimo accesso dalla sessione.<br>Si consiglia di creare il file HTML 'login.html' nella stessa directory del file Python per fornire il modulo di login personalizzato.<br>Assicurati di mantenere la chiave segreta (app.secret_key) protetta e di non divulgarla pubblicamente, poiché è utilizzata per firmare la sessione e proteggere le informazioni.</br></p>
+          <li><a href="https://github.com/briscx/corsocyber/blob/main/service-scan.py" target="_blank">ServiceScan</a></li>
+          <p>Questo codice è uno script Python per la scansione dei servizi su un determinato indirizzo IP.<br>Si consiglia di personalizzare l'indirizzo IP del target (target_ip),in questo esempio io ho usato l'IP di Google,</br>la porta di partenza (start_port),<br>la porta di fine (end_port)</br>in base alle tue esigenze di scansione dei servizi.</p>
+          <li><a href="https://github.com/briscx/corsocyber/blob/main/testapp.py" target="_blank">TestApp</a></li>
+          <p>In sintesi, questo codice Flask definisce un'applicazione web che mostra un form di accesso.<br>Quando si invia il form con l'username e la password, vengono visualizzati i valori ricevuti.</br>Altrimenti, viene visualizzato il form per l'inserimento dei dati di accesso.<br>Si consiglia di personalizzare ulteriormente l'applicazione aggiungendo la logica di autenticazione o l'invio dei dati di accesso a un backend per la verifica delle credenziali."</p>
+          <li><a href="https://github.com/briscx/corsocyber/blob/main/aut2ways.py" target="_blank">Aut2Ways</a></li>
+          <p>Questo è il codice di un'applicazione Flask per un sistema di accesso OTP (One-Time Password).<br>In sintesi, questo codice definisce un'applicazione web che implementa un sistema di accesso OTP.</br>Gli utenti possono inserire un username e una password nel form di accesso.<br>Se le credenziali corrispondono a un valore fisso, viene generata una OTP casuale, viene inviata all'indirizzo email specificato</p>
+          <li><a href="https://github.com/briscx/corsocyber/blob/main/passwordsec.py" target="_blank">PasswordSec</a></li>
+          <p>Questo è il codice di un'applicazione Flask che verifica se una password fornita soddisfa determinati criteri di sicurezza.<br>In sintesi, questo codice Flask definisce un'applicazione web che verifica se una password fornita soddisfa i criteri di sicurezza.</br>Gli utenti possono inserire una password nel form e la funzione is_secure_password() verifica se la password è sicura o meno.</br>Il risultato viene restituito all'utente come messaggio sulla pagina web.</p>
+          <li><a href="https://github.com/briscx/corsocyber/blob/main/secure4key.py" target="_blank">Secure4Key</a></li>
+          <p>Questo è il codice di un'applicazione Flask che esegue diverse operazioni di crittografia e hash.<br>In sintesi, questo codice Flask definisce un'applicazione web che esegue operazioni di hashing (MD5, SHA-1, SHA-256) e crittografia (AES, RSA) su un testo fornito dall'utente.</br>L'utente può selezionare l'algoritmo desiderato e visualizzare i risultati sulla pagina web.</p>
+          <li><a href="https://github.com/briscx/corsocyber/blob/main/testmail.py" target="_blank">TestMail</a></li>
+          <p>Questo è il codice di un'applicazione Flask che consente di inviare email utilizzando il protocollo SMTP attraverso un account Gmail.<br>In sintesi, questo codice Flask definisce un'applicazione web che consente di inviare email tramite il server SMTP di Gmail.</br>Gli utenti possono compilare un form con i dettagli dell'email (mittente, destinatario, soggetto e messaggio) e inviarlo.<br>L'applicazione si connetterà al server SMTP di Gmail utilizzando l'account mittente specificato, invierà l'email con i dettagli forniti e restituirà un messaggio di conferma.</p>
+          <li><a href="https://github.com/briscx/corsocyber/blob/main/blockchain.py" target="_blank">Blockchain</a></li>
+          <p>Questo codice implementa una semplice blockchain utilizzando la crittografia hash SHA-256 con due blocchi e verifica l'integrità della catena.<b>È importante notare che questa implementazione è solo a scopo didattico e non contiene tutte le funzionalità e le sicurezze di una blockchain completa.</b>è possibile implementare il codice all'interno dell'applicazione Flask che invia email tramite SMTP(link sopra).<br>In particolare, puoi aggiungere la funzionalità della blockchain all'applicazione Flask che invia email.</br>Ad esempio, puoi creare un endpoint aggiuntivo per aggiungere blocchi alla blockchain ogni volta che viene inviata un'email.</p>
+          <li><a href="https://github.com/briscx/corsocyber/blob/main/scrap.py" target="_blank">Scrap</a></li>
+          <p>Questo codice utilizza la libreria Selenium per automatizzare l'interazione con un browser web.<br>In sintesi, il codice utilizza Selenium per aprire una pagina web, fare clic su un link di login e quindi chiudere il browser.</br>Puoi personalizzare ulteriormente il codice per adattarlo alle tue esigenze specifiche, come l'automazione di altre azioni sulla pagina web o l'utilizzo di un driver per un browser diverso da Chrome.</p>
+          <li><a href="https://github.com/briscx/corsocyber/blob/main/becrypto.py" target="_blank">BeCrypto</a></li>
+          <p>Questo codice rappresenta un'applicazione web con Flask che consente agli utenti di registrarsi e memorizza le informazioni nel database MySQL.<br>L'applicazione consente agli utenti di registrarsi inviando un modulo con un username e una password.</br>La password viene crittografata e quindi memorizzata nel database MySQL.<br>Inoltre, i dati della tabella "accessi" vengono stampati per verifica.</p>
+          <li><a href="https://github.com/briscx/corsocyber/blob/main/request.py" target="_blank">Request</a></li>
+          <p>Questo codice utilizza il modulo requests per effettuare una richiesta GET a una pagina web specificata tramite URL.<br>Utilizza anche il modulo BeautifulSoup per analizzare l'HTML della pagina e estrarre informazioni dai suoi elementi.</br>Si noti che il codice può essere personalizzato per eseguire diverse operazioni di scraping e analisi sui dati HTML delle pagine web.<br>Ricorda di sostituire l'URL nel codice con quello di tuo interesse</p>
+        </ul>
+        <h2 id="programs">Programmi Utilizzati</h2>
+        <div class="grid-container">
+          <div class0"grid-item1">
+            <a href="https://www.metasploit.com/">
+              <img src="image/Metasploit.png" alt="Metasploit">
+              <b>Metasploit</b>
+            </a>
+          </div>
+          <div class0"grid-item1">
+            <a href="https://nmap.org/">
+              <img src="image/Nmap.png" alt="Nmap">
+              <b>NMap</b>
+            </a>
+          </div>
+          <div class0"grid-item1">
+            <a href="https://www.offsec.com/metasploit-unleashed/armitage/">
+              <img src="image/Armitage.png" alt="Armitage">
+              <b>Armitage</b>
+            </a>
+          </div>
+          <div class0"grid-item1">
+            <a href="https://github.com/simsong/bulk_extractor">
+              <img src="image/Bulk_Extractor.png" alt="Bulk_Extractor">
+              <b>Bulk_Extractor</b>
+            </a>
+          </div>
+          <div class0"grid-item1">
+            <a href="https://github.com/g0tmi1k/exe2hex">
+              <img src="image/Exe2hex.png" alt="Exe2hex">
+              <b>exe2hex</b>
+            </a>
+          </div>
+          <div class0"grid-item1">
+            <a href="https://hashcat.net/hashcat/">
+              <img src="image/Hashcat.png" alt="Hashcat">
+              <b>Hashcat</b>
+            </a>
+          </div>
+          <div class0"grid-item1">
+            <a href="https://www.immuniweb.com/">
+              <img src="image/ImmuniWeb.png" alt="Immuniweb">
+              <b>ImmuniWeb</b>
+            </a>
+          </div>
+          <div class0"grid-item1">
+            <a href="https://github.com/t6x/reaver-wps-fork-t6x">
+              <img src="image/Reaver.png" alt="Reaver">
+              <b>Reaver</b>
+            </a>
+          </div>
+          <div class0"grid-item1">
+            <a href="https://wpscan.com/">
+              <img src="image/Wpscan.png" alt="Wpscan">
+              <b>Wpscan</b>
+            </a>
+          </div>
+          <div class0"grid-item1">
+            <a href="https://github.com/sullo/nikto">
+              <img src="image/Nikto.png" alt="Nikto">
+              <b>Nikto</b>
+            </a>
+          </div>
+          <div class0"grid-item1">
+            <a href="https://code.google.com/archive/p/skipfish/">
+              <img src="image/SkipFish.png" alt="Skipfish">
+              <b>Skipfish</b>
+            </a>
+          </div>
+          <div class0"grid-item1">
+            <a href="https://portswigger.net/burp/communitydownload">
+              <img src="image/BurpeSuite.png" alt="Burpesuite">
+              <b>Burpesuite</b>
+            </a>
+          </div>
+          <div class0"grid-item1">
+            <a href="https://dirb.sourceforge.net/">
+              <img src="image/Dirb.png" alt="Dirb">
+              <b>Dirb</b>
+            </a>
+          </div>
+          <div class0"grid-item1">
+            <a href="https://www.aircrack-ng.org/index.html">
+              <img src="image/Aircrack-ng.png" alt="Aircrack-ng">
+              <b>Aircrack-ng</b>
+            </a>
+          </div>
+          <div class0"grid-item1">
+            <a href="https://github.com/owasp-amass/amass">
+              <img src="image/Amass.png" alt="Amass">
+              <b>Amass</b>
+            </a>
+          </div>
+          <div class0"grid-item1">
+            <a href="https://www.autopsy.com/download/">
+              <img src="image/Autopsy.png" alt="Autopsy">
+              <b>Autopsy</b>
+            </a>
+          </div>
+          <div class0"grid-item1">
+            <a href="https://commixproject.com/">
+              <img src="image/Commix.png" alt="Commix">
+              <b>Commix</b>
+            </a>
+          </div>
+          <div class0"grid-item1">
+            <a href="https://github.com/vanhauser-thc/thc-hydra">
+              <img src="image/Hydra.png" alt="Hydra">
+              <b>Hydra</b>
+            </a>
+          </div>
+          <div class0"grid-item1">
+            <a href="https://github.com/openwall/john">
+              <img src="image/John-The-Ripper.png" alt="John-The-Ripper">
+              <b>John-the-Ripper</b>
+            </a>
+          </div>
+          <div class0"grid-item1">
+            <a href="https://www.maltego.com/">
+              <img src="image/Maltego.png" alt="Maltego">
+              <b>Maltego</b>
+            </a>
+          </div>
+          <div class0"grid-item1">
+            <a href="https://mitmproxy.org/">
+              <img src="image/Mitmproxy.png" alt="Mitmproxy">
+              <b>Mitmproxy</b>
+            </a>
+          </div>
+          <div class0"grid-item1">
+            <a href="http://netsniff-ng.org/">
+              <img src="image/Netsniff-ng.png" alt="Netsniff-ng">
+              <b>Netsniff.ng</b>ù
+            </a>
+          </div>
+          <div class0"grid-item1">
+            <a href="https://github.com/lanjelot/patator">
+              <img src="image/Patator.png" alt="Patator">
+              <b>Patator</b>
+            </a>
+          </div>
+          <div class0"grid-item1">
+            <a href="https://github.com/trustedsec/social-engineer-toolkit">
+              <img src="image/SET.png" alt="Set-Engineering-Toolkit">
+              <b>Social Engineering Toolkit(SET)</b>
+            </a>
+          </div>
+          <div class0"grid-item1">
+            <a href="https://www.spiderfoot.net/attack-surface-monitoring/">
+              <img src="image/SpiderFoot.png" alt="Spiderfoot">
+              <b>Spiderfoot</b>
+            </a>
+          </div>
+          <div class0"grid-item1">
+            <a href="https://sqlmap.org/">
+              <img src="image/Sqlmap.png" alt="Sqlmap">
+              <b>Sqlmap</b>
+            </a>
+          </div>
+          <div class0"grid-item1">
+            <a href="https://wapiti-scanner.github.io/">
+              <img src="image/Wapiti.png" alt="Wapiti">
+              <b>Wapiti</b>
+            </a>
+          </div>
+          <div class0"grid-item1">
+            <a href="https://www.wireshark.org/download.html">
+              <img src="image/Wireshark_Icon.png" alt="Wireshark">
+              <b>Wireshark</b>
+            </a>
+          </div>
         </div>
+      </div>
     </body>
 </html>
