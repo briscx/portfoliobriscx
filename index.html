@@ -68,9 +68,6 @@
             margin-bottom: 10px;
         }
       .sidebar-frame {
-        position: fixed;
-        top: 600px;
-        left: 0;
         width: 200px;
         height: 100%;
       }
@@ -78,6 +75,22 @@
         .sidebar-frame {
           display: none;
         }
+      }
+      .scroll-top-btn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        padding: 10px 20px;
+        background-color: #333;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      .footer {
+        background-color: #f4f4f4;
+        padding: 20px;
+        text-align: center;
       }
     </style>
 </head>
@@ -316,5 +329,15 @@
           </div>
         </div>
       </div>
+      <button onclick="scrollToTop()" class="scroll-top-btn">Torna all'inizio</button>
+      <script>
+        function scrollToTop() {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+          </script>
+      <footer class="footer">
+        <p>Recapito telefonico: +39 375 50 23 535</p>
+        <p>Email: <a href="mailto:andrea.brischetto84@gmail.com">andrea.brischetto84@gmail.com</a></p>
+        <p>&copy; 2023 Brischetto Salvatore Andrea. Tutti i diritti riservati.</p>
+      </footer>
     </body>
 </html>
