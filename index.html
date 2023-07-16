@@ -14,59 +14,101 @@
             padding: 20px;
             color: #333333;
         }
-        h1 {
-            text-align: center;
-            margin-bottom: 20px;
-            color: #004080;
+      .weather-container {
+        max-width: 400px;
+        margin: 0 auto;
+        text-align: center;
         }
-        img {
-            display: block;
-            margin: 0 auto;
-            width: 300px;
-            height: 300px;
-            border-radius: 30%;
+
+      form {
+        margin-bottom: 20px;
         }
-        p {
-            line-height: 1.5;
-            margin-bottom: 10px;
+
+      input[type="text"] {
+        padding: 5px;
         }
-        ol, ul {
-            margin-left: 20px;
-            color: #006699;
+
+      .location-timezone {
+        font-size: 24px;
+        font-weight: bold;
         }
-        li {
-            margin-bottom: 5px;
+
+      .temperature {
+        font-size: 48px;
+        font-weight: bold;
         }
-        a {
-            color: #0099CC;
-            text-decoration: none;
+
+      .temperature__section {
+        font-size: 24px;
         }
-        a:hover {
-            text-decoration: underline;
+
+      .temperature__humidity {
+        margin-top: 20px;
         }
-        h2 {
-            color: #004080;
+      h1 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #004080;
         }
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            grid-gap: 20px;
-            justify-items: center;
-            align-items: center;
-            text-align: center
+      
+      img {
+        display: block;
+        margin: 0 auto;
+        width: 300px;
+        height: 300px;
+        border-radius: 30%;
         }
-        .grid-item1 {
-            background: grey;
-            text-align: center;
-            border: purple 10px solid;
-            width: 350px;
-            height: 350px;
+      
+      p {
+        line-height: 1.5;
+        margin-bottom: 10px;
         }
-        .grid-item1 img {
-            width: 300px;
-            height: 225px;
-            margin-bottom: 10px;
+      
+      ol, ul {
+        margin-left: 20px;
+        color: #006699;
         }
+      
+      li {
+        margin-bottom: 5px;
+        }
+      
+      a {
+        color: #0099CC;
+        text-decoration: none;
+        }
+      
+      a:hover {
+        text-decoration: underline;
+        }
+      
+      h2 {
+        color: #004080;
+        }
+      
+      .grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        grid-gap: 20px;
+        justify-items: center;
+        align-items: center;
+        text-align: center
+        }
+      
+      .grid-item1 {
+        background: grey;
+        text-align: center;
+        border: purple 10px solid;
+        width: 350px;
+        height: 350px;
+        }
+      
+      .grid-item1 img {
+        width: 300px;
+        height: 225px;
+        margin-bottom: 10px;
+        }
+      
       .sidebar-frame {
         width: 200px;
         height: 100%;
@@ -114,6 +156,23 @@
                 </ul>
             </div>
         </nav>
+      <div class="weather-container">
+        <form>
+          <input type="text" id="city-input" placeholder="Inserisci la città">
+          <button type="submit">Cerca</button>
+        </form>
+        <div class="location-timezone"></div>
+        <div class="temperature">
+          <span class="temperature__section-degree"></span>
+          <sup>&deg;C</sup>
+        </div>
+        <div class="weather"></div>
+        <div class="temperature__section">
+          Min: <span class="temperature__section-degree-min"></span>&deg;C |
+          Max: <span class="temperature__section-degree-max"></span>&deg;C
+        </div>
+        <div class="temperature__humidity"></div>
+      </div>
       <iframe src="sidebar.html" frameborder="0" class="sidebar-frame"></iframe>
       <div class="container">
         <h1>Cyber Security - Brischetto Salvatore Andrea</h1>
