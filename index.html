@@ -385,7 +385,7 @@
             e.preventDefault();
             let city = input.value;
             input.value = '';
-            const api = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=YOUR_API_KEY&lang=${lang}`;
+            const api = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=9f11284868fdf52b7ff9cdb0d1e61737&lang=${lang}`;
             fetch(api)
               .then((response) => {
                 return response.json();
