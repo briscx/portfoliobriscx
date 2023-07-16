@@ -340,5 +340,68 @@
         <p>Email: <a href="mailto:andrea.brischetto84@gmail.com">andrea.brischetto84@gmail.com</a></p>
         <p>&copy; 2023 Brischetto Salvatore Andrea. Tutti i diritti riservati.</p>
       </footer>
+      <script>
+        window.addEventListener("load", () => {
+          let long;
+          let lat;
+
+          let temperatureDescription = document.querySelector('.weather');
+          let locationTimezone = document.querySelector('.location-timezone');
+          let temperatureDegree = document.querySelector('.temperature__section-degree');
+          let temperatureSectionDegreeMin = document.querySelector('.temperature__section-degree-min');
+          let temperatureSectionDegreeMax = document.querySelector('.temperature__section-degree-max');
+          let temperatureHumidity = document.querySelector('.temperature__humidity');
+
+          let locationIcon = document.querySelector('.location-icon');
+          let lang = (navigator.language).substring(0, 2);
+
+          let form = document.querySelector('form');
+          let input = document.querySelector('input');
+          
+          if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition((position) => {
+            long = position.coords.longitude;
+            lat = position.coords.latitude;
+              
+              const api = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=YOUR_API_KEY&lang=${lang}`;
+              fetch(api)
+                .then((response) => {
+                  return response.json();
+                })
+                .then((data) => {
+                  const { name, weather, main } = data;
+                  temperatureDegree.textContent = (main.temp - 273.15).toFixed(2);
+                  temperatureDescription.textContent = weather[0].description.toUpperCase();
+                  locationTimezone.textContent = name;
+                  locationIcon.src = `http://openweathermap.org/img/wn/${weather[0].icon}.png`;
+                  temperatureSectionDegreeMin.textContent = (main.temp_min - 273.15).toFixed(0);
+                  temperatureSectionDegreeMax.textContent = (main.temp_max - 273.15).toFixed(0);
+                  temperatureHumidity.textContent = `Umidità: ${main.humidity}%`;
+                });
+            });
+          }
+          
+          form.addEventListener('submit', e => {
+            e.preventDefault();
+            let city = input.value;
+            input.value = '';
+            const api = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=YOUR_API_KEY&lang=${lang}`;
+            fetch(api)
+              .then((response) => {
+                return response.json();
+              })
+              .then((data) => {
+                const { name, weather, main } = data;
+                temperatureDegree.textContent = (main.temp - 273.15).toFixed(2);
+                temperatureDescription.textContent = weather[0].description.toUpperCase();
+                locationTimezone.textContent = name;
+                locationIcon.src = `http://openweathermap.org/img/wn/${weather[0].icon}.png`;
+                temperatureSectionDegreeMin.textContent = (main.temp_min - 273.15).toFixed(0);
+                temperatureSectionDegreeMax.textContent = (main.temp_max - 273.15).toFixed(0);
+                temperatureHumidity.textContent = `Umidità: ${main.humidity}%`;
+              });
+          });
+        });
+      </script>
     </body>
 </html>
