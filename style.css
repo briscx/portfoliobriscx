@@ -1,1 +1,127 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F4F4F4;
+    margin: 50px;
+    padding: 20px;
+    color: #333333;
+}
+.weather-container {
+max-width: 400px;
+margin: 0 auto;
+text-align: center;
+}
 
+form {
+margin-bottom: 20px;
+}
+
+input[type="text"] {
+padding: 5px;
+}
+
+.location-timezone {
+font-size: 24px;
+font-weight: bold;
+}
+
+.temperature {
+font-size: 48px;
+font-weight: bold;
+}
+
+.temperature__section {
+font-size: 24px;
+}
+
+.temperature__humidity {
+margin-top: 20px;
+}
+h1 {
+text-align: center;
+margin-bottom: 20px;
+color: #004080;
+}
+
+img {
+display: block;
+margin: 0 auto;
+width: 300px;
+height: 300px;
+border-radius: 30%;
+}
+
+p {
+line-height: 1.5;
+margin-bottom: 10px;
+}
+
+ol, ul {
+margin-left: 20px;
+color: #006699;
+}
+
+li {
+margin-bottom: 5px;
+}
+
+a {
+color: #0099CC;
+text-decoration: none;
+}
+
+a:hover {
+text-decoration: underline;
+}
+
+h2 {
+color: #004080;
+}
+
+.grid-container {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+grid-gap: 20px;
+justify-items: center;
+align-items: center;
+text-align: center
+}
+
+.grid-item1 {
+background: grey;
+text-align: center;
+border: purple 10px solid;
+width: 350px;
+height: 350px;
+}
+
+.grid-item1 img {
+width: 300px;
+height: 225px;
+margin-bottom: 10px;
+}
+
+.sidebar-frame {
+width: 200px;
+height: 100%;
+}
+@media (max-width: 768px) {
+.sidebar-frame {
+  display: none;
+}
+}
+.scroll-top-btn {
+position: fixed;
+bottom: 20px;
+right: 20px;
+padding: 10px 20px;
+background-color: #333;
+color: #fff;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+}
+.footer {
+background-color: #f4f4f4;
+padding: 20px;
+text-align: center;
+}
