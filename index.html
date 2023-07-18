@@ -6,6 +6,9 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jsencrypt/3.0.0/jsencrypt.min.js"></script>
+  <script src="path_al_tuo_script.js"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -178,6 +181,19 @@
         <h1>Cyber Security - Brischetto Salvatore Andrea</h1>
         <img src="PictureGithubProfile.jpeg" alt="Profile Picture">
         <p>Benvenuti sulla pagina personale di Brischetto Salvatore Andrea. Di seguito sono riportati alcuni principi generali della cyber security:</p>
+        <h2>Strumenti di crittografia</h2>
+        <form>
+          <label for="encryption-key">Chiave crittografica:</label>
+          <input type="text" id="encryption-key" placeholder="Inserisci la chiave crittografica">
+          <label for="encryption-algorithm">Algoritmo di crittografia:</label>
+          <select id="encryption-algorithm">
+            <option value="sha256">SHA-256</option>
+            <option value="sha512">SHA-512</option>
+            <option value="aes">AES</option>
+            <option value="rsa">RSA</option>
+          </select>
+          <button id="encrypt-button">Crittografa</button>
+        </form>
         <ol id="principles">
           <li><strong>Confidenzialità:</strong> Assicurarsi che le informazioni siano accessibili solo a persone autorizzate. Utilizzare tecniche come la crittografia per proteggere i dati sensibili.</li>
           <li><strong>Integrità:</strong> Garantire che le informazioni non siano alterate in modo non autorizzato o accidentale. Utilizzare firme digitali e controlli di integrità per rilevare modifiche non autorizzate ai dati.</li>
@@ -461,6 +477,43 @@
               });
           });
         });
+        
+        function getSelectedAlgorithm() {
+          const selectElement = document.getElementById('encryption-algorithm');
+          return selectElement.value;
+        }
+        
+        function handleEncryptClick() {
+          const inputText = document.getElementById('encryption-key').value;
+          const selectedAlgorithm = getSelectedAlgorithm();
+          
+          if (selectedAlgorithm === 'sha256') {
+            const encryptedText = CryptoJS.SHA256(inputText).toString();
+            alert('Testo crittografato con SHA-256:\n' + encryptedText);
+          } else if (selectedAlgorithm === 'sha512') {
+            const encryptedText = CryptoJS.SHA512(inputText).toString();
+            alert('Testo crittografato con SHA-512:\n' + encryptedText);
+          } else if (selectedAlgorithm === 'aes') {
+            const key = 'QuestaeUnaChiaveSegreta';
+            const encryptedText = CryptoJS.AES.encrypt(inputText, key).toString();
+            alert('Testo crittografato con AES:\n' + encryptedText);
+          } else if (selectedAlgorithm === 'rsa') {
+            
+            const crypt = new JSEncrypt({ default_key_size: 2048 });
+            const privateKey = crypt.getPrivateKey();
+            const publicKey = crypt.getPublicKey();
+            
+            crypt.setPublicKey(publicKey);
+            const encryptedText = crypt.encrypt(inputText);
+            
+            alert('Chiave pubblica RSA:\n' + publicKey + '\n\nTesto crittografato con RSA:\n' + encryptedText);
+          } else {
+            alert('Seleziona un algoritmo di crittografia valido.');
+          }
+        }
+        
+        const encryptButton = document.getElementById('encrypt-button');
+        encryptButton.addEventListener('click', handleEncryptClick);
       </script>
     </body>
 </html>
